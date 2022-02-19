@@ -29,8 +29,12 @@ class BaseMaze(ABC):
     
     def _convert(self, x, name):
         for obj in self.objects:
-            pos = np.asarray(obj.positions)
-            x[pos[:, 0], pos[:, 1]] = getattr(obj, name, None)
+            if name != 'rgb' or  obj.name != 'goal':
+                pos = np.asarray(obj.positions)
+                x[pos[:, 0], pos[:, 1]] = getattr(obj, name, None)
+            else:
+                pos = np.asarray(obj.positions)
+                x[pos[:, 0], pos[:, 1]] = getattr(self.objects[0], name, None)
         return x
     
     def to_name(self):
