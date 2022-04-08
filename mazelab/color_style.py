@@ -3,9 +3,10 @@ from dataclasses import dataclass
 
 @dataclass
 class DeepMindColor:
-    obstacle = (160, 160, 160)
-    free = (224, 224, 224)
-    agent = (51, 153, 255)
+    obstacle = (5, 55, 66)
+    free = (232, 240, 242)
+    # agent = (204, 85, 0)
+    agent = (240, 84, 84)
     goal = (51, 255, 51)
     button = (102, 0, 204)
     interruption = (255, 0, 255)
